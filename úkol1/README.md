@@ -4,8 +4,8 @@ Program zpracuje soubor formátu .csv nebo .tsv a vrátí indexy řádků určen
 
 VSTUP: soubor .csv nebo .tsv \
 VÝSTUP: vytisknou se 2 seznamy indexů pro řádky určené k odstranění
-- 1. seznam odpovídá indexům, které by odpovídaly situaci, kdy jsou hodnoty načtené samostatně bez názvů sloupců a také kdy indexování začíná od 0.
-- 2. seznam odpovídá indexům pro tabulky indexované od 1 a kdy je první řádek obsazen názvy sloupců.
+1. seznam odpovídá indexům, které by odpovídaly situaci, kdy jsou hodnoty načtené samostatně bez názvů sloupců a také kdy indexování začíná od 0.
+2. seznam odpovídá indexům pro tabulky indexované od 1 a kdy je první řádek obsazen názvy sloupců.
 
 Postup:
 - Předpokládá se, že soubor může mít tisíce řádků, zpracovává se tedy postupně po kusech o 1000 řádcích.
