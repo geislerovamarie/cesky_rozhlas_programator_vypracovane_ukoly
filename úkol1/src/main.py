@@ -15,5 +15,12 @@ if __name__ == "__main__":
         logger.error("No valid filename as an argument.")
         sys.exit(1)
     
-    print(clean_data(file))
+    rows_to_delete = clean_data(file)
+    print("Rows to delete")
+    print("---------------")
+    print("1) counting starts at 0, 0th row would already be value:")
+    print(rows_to_delete)
+    print("")
+    print("2) counting starts at 1 and 1st row would be column names:")
+    print([num+2 for num in rows_to_delete])
     logger.info("Program finished.")
