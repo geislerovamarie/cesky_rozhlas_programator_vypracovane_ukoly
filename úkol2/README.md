@@ -21,14 +21,14 @@ python3 src/main.py --source_file=<path_to_input_file> --output_file=<path_to_ou
 Příklady:
 ```
 python3 src/main.py --source_file=../úkol2/obecnа_osoba.xml --output_file=../úkol2/obecna_osoba.csv --otype=csv
-
+```
+```
 python3 src/main.py --source_file=../úkol2/obecnа_osoba.xml --otype=tsv
-
+```
+```
 python3 src/main.py --source_file=../úkol2/obecnа_osoba.xml --output_file=../úkol2/obecna_osoba.json
-
-
 ```
 ## Testování
 ```
-python3 -m unittest tests/test_clean_data.py
+python3 -m unittest tests/test_handle_arguments.py
 ```

@@ -19,20 +19,19 @@ def get_om_object_vals(om_object):
         values.append(om_object.attrib.get(col))
     return column_names, values
 
-def get_correct_val(field):   
+def get_correct_val(field):
+    """Extrahuje text daného pole OM_FIELD, nebo uloží prázdný string"""   
     for child in field:
         val = child.text
-        return val if val else ""   # assuming the val should be empty string
+        return val if val else ""  # assuming for no text the val should be empty string
 
 def get_om_fields_vals(om_object):
     column_names = []
     values = []
-
     om_header = om_object.find("OM_HEADER")
     for field in om_header.findall("OM_FIELD"):
         column_names.append(field.attrib.get('FieldID'))
         values.append(get_correct_val(field))
-        
     return column_names, values
 
 def parse_xml(source):

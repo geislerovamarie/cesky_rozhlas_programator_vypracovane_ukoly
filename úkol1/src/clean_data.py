@@ -8,11 +8,9 @@ logger = logging.getLogger(__name__)
 format = "%(levelname)s: %(filename)s %(funcName)s() line: %(lineno)s %(message)s"
 logging.basicConfig(format=format, level=logging.DEBUG)
 
-
 all_rows_to_delete = [] # vysledek - radky k odstraneni
 sequences_nonempty_name = set() # mnozina prvku "ObjectID" s alespon 1 radkem s neprazdnym "Name"
 backup = {} # zaloha - cislo prvniho radku s prazdnym "Name" (dictionary s "ObjectID":"index prvniho radku")
-
 
 def process_filename(file):
     #logger.info("File to be processed: " + file)
