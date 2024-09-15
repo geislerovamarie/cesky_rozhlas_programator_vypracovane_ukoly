@@ -56,6 +56,7 @@ def check_if_rows_can_be_deleted():
 
 
 def clean_data(file):
+    #logger.info("Cleaning data.")
     separator = process_filename(file)
     chunk_size = 1000
 

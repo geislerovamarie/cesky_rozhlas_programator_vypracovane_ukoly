@@ -9,16 +9,14 @@ logging.basicConfig(format=format, level=logging.DEBUG)
 
 def get_encoding(source):
     encoding = etree.parse(source).docinfo.encoding
-    logger.info("Encoding of the file %s is %s.", source, encoding)
+    #logger.info("Encoding of the file %s is %s.", source, encoding)
     return encoding
 
 def get_om_object_vals(om_object):
     column_names = ["ObjectID", "DirectoryID", "TemplateName"]
     values = []
-
     for col in column_names:
         values.append(om_object.attrib.get(col))
-
     return column_names, values
 
 def get_correct_val(field):   
@@ -34,11 +32,11 @@ def get_om_fields_vals(om_object):
     for field in om_header.findall("OM_FIELD"):
         column_names.append(field.attrib.get('FieldID'))
         values.append(get_correct_val(field))
-
+        
     return column_names, values
 
 def parse_xml(source):
-    logger.info("Parsing %s.", source)
+    #logger.info("Parsing %s.", source)
 
     tree = ET.parse(source)
     root = tree.getroot()

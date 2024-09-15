@@ -1,8 +1,7 @@
 import logging
-from parse_xml import parse_xml
 import csv
 import json
-
+import sys
 
 logger = logging.getLogger(__name__)
 format = "%(levelname)s: %(filename)s %(funcName)s() line: %(lineno)s %(message)s"
@@ -19,15 +18,15 @@ def export_to_json(column_names, values, target, encoding):
     with open(target, mode='w', encoding=encoding) as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
 
-def transform_xml(column_names, values, target, type, encoding):
-    logger.info("Transforming to %s.", target)
+def transform_xml(column_names, values, target, ext, encoding):
+    #logger.info("Transforming to %s.", target)
 
-    if type == 'csv':
+    if ext == 'csv':
         export_to_csv_or_tsv(column_names, values, target, ',', encoding)
-    elif type == 'tsv':
+    elif ext == 'tsv':
         export_to_csv_or_tsv(column_names, values, target, '\t', encoding)
-    elif type == 'json':
+    elif ext == 'json':
         export_to_json(column_names, values, target, encoding)
-
-    print(target)
-
+    else:
+        logger.error("The transformation for type %s is not implemented.", ext)
+        sys.exit(1)
