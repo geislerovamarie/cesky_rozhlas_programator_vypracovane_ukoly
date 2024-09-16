@@ -10,12 +10,12 @@ VÝSTUP: vytisknou se 2 seznamy indexů pro řádky určené k odstranění
 Postup:
 - Předpokládá se, že soubor může mít tisíce řádků, zpracovává se tedy postupně po kusech o 1000 řádcích.
 - v každém kusu:
-    - pro každou sekvenci se stejným ObjectID se spočítá se počet řádků s neprázdným Name
-    - pro sekvence s 0 neprázdnými řádky se uloží ObjectID a index prvního řádků jako záloha
-    - sekvence s alespoň 1 neprázdným řádkem se uloží jako kontrola do množiny, že není potřeba využít zálohu
+    - pro každou sekvenci se stejným ObjectID se spočítá počet řádků s neprázdným Name
+    - pro sekvence s 0 neprázdnými řádky se uloží ObjectID a index prvního řádku sekvence jako záloha, pokud nebude existovat řádek sekvence s neprázdným Name
+    - sekvence s alespoň 1 neprázdným řádkem v Name se uloží jako kontrola do množiny, že není potřeba využít zálohu
     - všechny řádky s prázdným Name se označí k odstranění
 - po zpracování všech kusů se projdou ObjectID v záloze a zkontroluje se za pomocí kontrolní množiny, zda je potřeba je využít
-    - pokud se nenachází v kontrolní množině, jsou odstraněny z finálního seznamu řádků k odstranění
+    - pokud se nenachází v kontrolní množině, využijí se jako záloha a nebudou odstraněny = jsou odstraněny z finálního seznamu řádků k odstranění
 
 
 ## Instalace a spuštění
