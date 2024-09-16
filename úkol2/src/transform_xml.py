@@ -20,7 +20,6 @@ def export_to_json(column_names, values, target, encoding):
 
 def transform_xml(column_names, values, target, ext, encoding):
     #logger.info("Transforming to %s.", target)
-
     if ext == 'csv':
         export_to_csv_or_tsv(column_names, values, target, ',', encoding)
     elif ext == 'tsv':

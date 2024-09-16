@@ -36,7 +36,6 @@ def get_om_fields_vals(om_object):
 
 def parse_xml(source):
     #logger.info("Parsing %s.", source)
-
     tree = ET.parse(source)
     root = tree.getroot()
     om_object = root.find("OM_OBJECT")
